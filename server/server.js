@@ -21,6 +21,8 @@ app.use('/api/trips', require('./routes/tripRoutes'));
 app.use('/api/hotels', require('./routes/hotelRoutes'));
 app.use('/api/bookings', require('./routes/bookingRoutes'));
 app.use('/api/attractions', require('./routes/attractionRoutes'));
+app.use('/api/distance', require('./routes/distanceRoutes'));
+app.use('/api/algorithms', require('./routes/algorithmRoutes'));
 
 // Error Handler
 app.use(require('./middleware/errorHandler'));

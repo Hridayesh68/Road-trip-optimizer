@@ -27,14 +27,15 @@ const Attractions = () => {
             <div className="flex overflow-x-auto space-x-2 pb-4 mb-6 custom-scrollbar">
                 {optimizedRoute.map((city, index) => (
                     <button
-                        key={city.name}
+                        key={`${city.name}-${index}`}
                         onClick={() => {
                             setSelectedCityIndex(index);
+
                             setCategoryFilter(''); // reset filters on city change
                         }}
                         className={`whitespace-nowrap px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 ${selectedCityIndex === index
-                                ? 'bg-green-600 text-white shadow-md'
-                                : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+                            ? 'bg-green-600 text-white shadow-md'
+                            : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
                             }`}
                     >
                         <span className="text-xs opacity-75 mr-2">Stop {index + 1}</span>

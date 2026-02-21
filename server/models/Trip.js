@@ -7,12 +7,14 @@ const tripSchema = new mongoose.Schema({
         required: true,
     },
     cities: [{
-        type: String,
-        required: true,
+        name: { type: String, required: true },
+        lat: { type: Number, required: true },
+        lng: { type: Number, required: true }
     }],
     optimizedRoute: [{
-        type: String, // Or Object with full city details
-        required: true,
+        name: { type: String, required: true },
+        lat: { type: Number, required: true },
+        lng: { type: Number, required: true }
     }],
     totalDistance: {
         type: Number,

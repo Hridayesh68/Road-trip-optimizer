@@ -14,15 +14,20 @@ let DefaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const CityMarker = ({ city, orderIndex }) => {
+const CityMarker = ({ city, orderIndex, isVisualized, visualIndex }) => {
     return (
         <Marker position={[city.lat, city.lng]}>
             <Popup>
                 <div className="font-sans">
                     <h3 className="font-bold text-lg m-0">{city.name}</h3>
-                    {orderIndex !== undefined && (
+                    {orderIndex !== undefined && !isVisualized && (
                         <p className="text-sm text-blue-600 m-0 font-semibold mb-1">
                             Stop {orderIndex + 1}
+                        </p>
+                    )}
+                    {isVisualized && visualIndex !== -1 && (
+                        <p className="text-sm text-purple-600 m-0 font-semibold mb-1">
+                            Algorithm Visited #{visualIndex + 1}
                         </p>
                     )}
                     <p className="text-gray-500 text-xs m-0">Lat: {city.lat.toFixed(2)}, Lng: {city.lng.toFixed(2)}</p>

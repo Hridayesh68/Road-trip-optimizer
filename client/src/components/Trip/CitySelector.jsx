@@ -12,8 +12,7 @@ const CitySelector = ({ onAddCity, selectedCities, onOptimize, onReset, isOptimi
         setIsSearching(true);
         try {
             const response = await axios.get(
-                `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(searchQuery)}&format=json&featuretype=city&limit=5`,
-                { headers: { 'Accept-Language': 'en' } }
+                `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(searchQuery)}&format=json&featuretype=city&limit=5&accept-language=en`
             );
 
             // Map results to our expected format

@@ -6,6 +6,8 @@ export const TripProvider = ({ children }) => {
     const [selectedCities, setSelectedCities] = useState([]);
     const [optimizedRoute, setOptimizedRoute] = useState(null);
     const [totalDistance, setTotalDistance] = useState(0);
+    const [visualizedRoute, setVisualizedRoute] = useState(null);
+    const [algorithmMetrics, setAlgorithmMetrics] = useState(null);
 
     const addCity = (city) => {
         if (!selectedCities.find(c => c.name === city.name)) {
@@ -21,6 +23,8 @@ export const TripProvider = ({ children }) => {
         setSelectedCities([]);
         setOptimizedRoute(null);
         setTotalDistance(0);
+        setVisualizedRoute(null);
+        setAlgorithmMetrics(null);
     };
 
     return (
@@ -33,6 +37,10 @@ export const TripProvider = ({ children }) => {
             setOptimizedRoute,
             totalDistance,
             setTotalDistance,
+            visualizedRoute,
+            setVisualizedRoute,
+            algorithmMetrics,
+            setAlgorithmMetrics,
             clearTrip
         }}>
             {children}

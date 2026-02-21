@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TripMap from '../components/Map/TripMap';
 import CitySelector from '../components/Trip/CitySelector';
+import AlgorithmSelector from '../components/Trip/AlgorithmSelector';
 import tripService from '../services/tripService';
 import { TripContext } from '../context/TripContext';
 
@@ -48,6 +49,8 @@ const PlanTrip = () => {
                     onReset={clearTrip}
                     isOptimized={false}
                 />
+
+                <AlgorithmSelector />
             </div>
 
             {/* Map Area */}

@@ -16,7 +16,7 @@ const RouteResult = () => {
 
                 <div className="flex flex-col space-y-4">
                     {optimizedRoute.map((city, index) => (
-                        <div key={city.name} className="flex items-center group">
+                        <div key={`${city.name}-${index}`} className="flex items-center group">
                             <div className="relative z-10 w-8 h-8 rounded-full bg-blue-50 border-2 border-blue-500 flex items-center justify-center text-blue-600 font-bold text-sm shadow-sm transition-transform group-hover:scale-110">
                                 {index + 1}
                             </div>
